@@ -92,7 +92,17 @@
         <Sprite texture="%ModDir%/Sprites/R8.png" sourcerect="0,1,74,53" depth="0.55" origin="0.5,0.5" />
         <Body width="74" height="53" density="25" />
         <StatusHUD overlaycolor="0,0,0,0" range="3000" thermalgoggles="false" showdeadcharacters="false" showtexts="false" />
-        <Holdable slots="Any,RightHand,LeftHand" controlpose="true" aimpos="70,5" handle1="-23,-10" msg="ItemMsgPickUpSelect" />
+        <Holdable slots="Any,RightHand,LeftHand" controlpose="true" aimpos="70,5" handle1="-23,-10" msg="ItemMsgPickUpSelect">
+            <StatusEffect type="OnSecondaryUse" target="This" targetitemcomponent="StatusHUD" thermalgoggles="false" delay="1" stackable="false" />
+            <StatusEffect type="OnSecondaryUse" target="This" targetitemcomponent="LightComponent" ison="false" delay="1" stackable="false" />
+            <StatusEffect type="OnSecondaryUse" target="Contained" targetslot="1" Condition="-0.2" />
+            <StatusEffect type="OnSecondaryUse" target="This" targetitemcomponent="StatusHUD" drawhudwhenequipped="true" thermalgoggles="true">
+                <RequiredItem items="mobilebattery" type="Contained" />
+            </StatusEffect>
+            <StatusEffect type="OnSecondaryUse" target="This" targetitemcomponent="LightComponent" ison="true">
+                <RequiredItem items="mobilebattery" type="Contained" />
+            </StatusEffect>
+        </Holdable>
         <RangedWeapon barrelpos="22,11.5" reload="0.4" spread="0" unskilledspread="2" combatPriority="75" drawhudwhenequipped="true" crosshairscale="0.2">
             <Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,256,256,256" />
             <CrosshairPointer texture="Content/Items/Weapons/Crosshairs.png" sourcerect="256,256,256,256" />
@@ -105,15 +115,6 @@
                 <Conditional ReloadTimer="lte 0.2" />
                 <Conditional ReloadTimer="gt 0.1" />
                 <Sound file="%ModDir%/Sounds/R8_prepare.ogg" type="OnUse" volume="1" range="1000" loop="false" />
-            </StatusEffect>
-            <StatusEffect type="Always" target="This" targetitemcomponent="StatusHUD" thermalgoggles="false" interval="1" />
-            <StatusEffect type="Always" target="This" targetitemcomponent="LightComponent" ison="false" interval="1" />
-            <StatusEffect type="OnSecondaryUse" target="Contained" targetslot="1" Condition="-0.2" />
-            <StatusEffect type="OnSecondaryUse" target="This" targetitemcomponent="StatusHUD" drawhudwhenequipped="true" thermalgoggles="true">
-                <RequiredItem items="mobilebattery" type="Contained" />
-            </StatusEffect>
-            <StatusEffect type="OnSecondaryUse" target="This" targetitemcomponent="LightComponent" ison="true">
-                <RequiredItem items="mobilebattery" type="Contained" />
             </StatusEffect>
             <RequiredItems items="revolverammo" type="Contained" msg="ItemMsgAmmoRequired" />
             <RequiredSkill identifier="weapons" level="35" />

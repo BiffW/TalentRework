@@ -12,10 +12,11 @@
   <talentname.bigsmoke>Big Smoke</talentname.bigsmoke>
   <talentdescription.bigsmoke>Quickly gain [affliction_a] and [affliction_b] while smoking.</talentdescription.bigsmoke>
   <talentdescription.drunkensailor_new>Slowly gain [affliction] while drunk.</talentdescription.drunkensailor_new>
-  <talentname.angeltrigger>Angel Trigger</talentname.angeltrigger>
+  <talentname.angeltrigger>Missing Shots</talentname.angeltrigger>
   <talentdescription.angeltrigger>Deal [reduction]% less damage to allies with ‖color:gui.orange‖pistol ammo‖end‖.\nWhen you have [affliction], your attack with ‖color:gui.orange‖handcannon ammo‖end‖ will stun enemies for [second] extra seconds.</talentdescription.angeltrigger>
   <talentname.deviltrigger>Devil Trigger</talentname.deviltrigger>
   <talentdescription.deviltrigger>When you have [affliction], your attack with ‖color:gui.orange‖handcannon ammo‖end‖ will implode small creatures.</talentdescription.deviltrigger>
+  <talentdescription.onhealthpercentageloss>For each [healthloss]% vitality loss(up to [maxhealthloss]% loss), you gain:</talentdescription.onhealthpercentageloss>
   <!-- Items -->
   <entityname.tr_tacticalrevolver>Tactical Revolver</entityname.tr_tacticalrevolver>
   <entitydescription.tr_tacticalrevolver>.38 caliber. With laser pointer and thermal scope attached.</entitydescription.tr_tacticalrevolver>

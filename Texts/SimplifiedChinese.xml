@@ -12,10 +12,11 @@
   <talentname.bigsmoke>大烟枪</talentname.bigsmoke>
   <talentdescription.bigsmoke>抽烟时，快速获得[affliction_a]和[affliction_b]。</talentdescription.bigsmoke>
   <talentdescription.drunkensailor_new>醉酒时，缓慢获得[affliction]。</talentdescription.drunkensailor_new>
-  <talentname.angeltrigger>天使扳机</talentname.angeltrigger>
+  <talentname.angeltrigger>善良之枪</talentname.angeltrigger>
   <talentdescription.angeltrigger>使用‖color:gui.orange‖手枪弹药‖end‖对友方目标造成的伤害降低[reduction]%。\n拥有[affliction]时，使用‖color:gui.orange‖手炮弹药‖end‖对敌方目标造成[second]秒额外眩晕。</talentdescription.angeltrigger>
   <talentname.deviltrigger>恶魔扳机</talentname.deviltrigger>
   <talentdescription.deviltrigger>拥有[affliction]时，使用‖color:gui.orange‖手炮弹药‖end‖攻击小型怪物将使其内爆。</talentdescription.deviltrigger>
+  <talentdescription.onhealthpercentageloss>你每失去[healthloss]%生命值，获得以下效果（失去[maxhealthloss]%时达到最大效果）：</talentdescription.onhealthpercentageloss>
   <!-- 物品 -->
   <entityname.tr_tacticalrevolver>战术左轮</entityname.tr_tacticalrevolver>
   <entitydescription.tr_tacticalrevolver>.38口径。带有激光指示器和热成像瞄具。</entitydescription.tr_tacticalrevolver>
