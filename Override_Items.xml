@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Items>
+    <Override>
+        <!--add tag "bigsmoke" to trigger the talent-->
+        <Item name="" identifier="captainspipe" category="Misc" Tags="smallitem,bigsmoke" scale="0.5" cargocontaineridentifier="metalcrate" impactsoundtag="impact_metal_light" isshootable="true" requireaimtouse="true">
+            <PreferredContainer primary="crewcab" spawnprobability="0.05" notcampaign="true" />
+            <PreferredContainer secondary="wreckcrewcab,abandonedcrewcab" spawnprobability="0.1" />
+            <Price baseprice="50">
+                <Price storeidentifier="merchantoutpost" />
+                <Price storeidentifier="merchantcity" />
+                <Price storeidentifier="merchantresearch" />
+                <Price storeidentifier="merchantmilitary" />
+                <Price storeidentifier="merchantmine" />
+            </Price>
+            <!--add ranged weapon so it can trigger talent effect-->
+            <RangedWeapon reload="1" />
+            <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="511,957,64,64" origin="0.5,0.5" />
+            <Sprite texture="Content/Items/Misc/Misc.png" sourcerect="105,73,50,30" depth="0.55" origin="0.5,0.5" />
+            <Body width="58" height="20" density="15" />
+            <Holdable slots="Any,RightHand" aimable="false" aimpos="28,10" handle1="10,-5" swingamount="0,0" swingspeed="0.5" swingwhenusing="true" msg="ItemMsgPickUpSelect">
+                <StatusEffect type="OnUse" target="This">
+                    <ParticleEmitter particle="swirlysmoke" particlespersecond="1" scalemin="1" scalemax="2" anglemin="0" anglemax="360" velocitymin="0" velocitymax="10" />
+                    <RequiredItem items="pipetobacco" type="Contained" />
+                </StatusEffect>
+                <StatusEffect type="OnUse" target="Contained" Condition="-4.0" disabledeltatime="false">
+                    <RequiredItem items="pipetobacco" type="Contained" />
+                </StatusEffect>
+                <StatusEffect tags="medical" type="OnUse" target="Character">
+                    <Affliction identifier="psychosisresistance" amount="15" />
+                    <ReduceAffliction identifier="psychosis" amount="5" />
+                    <ReduceAffliction identifier="hallucinating" amount="10" />
+                    <RequiredItem items="pipetobacco" type="Contained" />
+                </StatusEffect>
+            </Holdable>
+            <ItemContainer hideitems="true" drawinventory="true" capacity="1" maxstacksize="1" slotsperrow="6" itempos="74,-281" iteminterval="0,0" itemrotation="0" canbeselected="false" containedspritedepth="0.79">
+                <Containable items="pipetobacco" />
+            </ItemContainer>
+        </Item>
+        <Item name="" identifier="cigar" category="Misc" Tags="smallitem,bigsmoke" scale="0.5" cargocontaineridentifier="metalcrate" allowasextracargo="true" impactsoundtag="impact_soft" isshootable="true" requireaimtouse="true">
+            <PreferredContainer primary="crewcab" />
+            <Price baseprice="130" sold="false" />
+            <!--add ranged weapon so it can trigger talent effect-->
+            <RangedWeapon reload="1" />
+            <Fabricate suitablefabricators="fabricator" requiredtime="5" requiresrecipe="true">
+                <RequiredItem identifier="pipetobacco" />
+            </Fabricate>
+            <InventoryIcon texture="Content/Items/JobGear/TalentGear.png" sourcerect="174,234,42,50" origin="0.5,0.5" />
+            <Sprite texture="Content/Items/JobGear/TalentGear.png" sourcerect="0,60,50,12" depth="0.55" origin="0.5,0.5" />
+            <Body width="45" height="10" density="9.9" />
+            <Holdable slots="Any,RightHand" aimable="false" aimpos="30,14" handle1="0,-10" swingamount="0,0" swingspeed="0.5" swingwhenusing="true" msg="ItemMsgPickUpSelect">
+                <StatusEffect type="OnUse" target="This" Condition="-4.0">
+                    <ParticleEmitter particle="swirlysmoke" particlespersecond="2" scalemin="1" scalemax="2" anglemin="0" anglemax="360" velocitymin="0" velocitymax="10" />
+                </StatusEffect>
+                <StatusEffect tags="medical" type="OnUse" target="Character">
+                    <Affliction identifier="psychosisresistance" amount="20" />
+                    <ReduceAffliction identifier="psychosis" amount="6" />
+                    <ReduceAffliction identifier="hallucinating" amount="10" />
+                    <ReduceAffliction identifier="reaperstax" amount="1" />
+                    <ReduceAffliction identifier="watchersgaze" amount="5" />
+                </StatusEffect>
+                <StatusEffect type="OnBroken" target="This">
+                    <Remove />
+                </StatusEffect>
+            </Holdable>
+        </Item>
+    </Override>
+
+    <Item identifier="tr_tacticalrevolver" category="Weapon" allowasextracargo="true" cargocontaineridentifier="metalcrate" tags="smallitem,weapon,gun,pistolitem,gunsmith,mountableweapon,revolver" Scale="0.5" impactsoundtag="impact_metal_light">
+        <PreferredContainer secondary="outpostsecarmcab" amount="1" spawnprobability="0.1" />
+        <PreferredContainer secondary="wrecksecarmcab,abandonedsecarmcab" amount="1" spawnprobability="0.15" />
+        <PreferredContainer primary="secarmcab" secondary="armcab,weaponholder" />
+        <Price baseprice="256" sold="false">
+            <Price storeidentifier="merchantoutpost" multiplier="1.5" />
+            <Price storeidentifier="merchantcity" multiplier="1.25" />
+            <Price storeidentifier="merchantresearch" multiplier="1.25" />
+            <Price storeidentifier="merchantmilitary" multiplier="0.9" minavailable="1" sold="true" />
+            <Price storeidentifier="merchantmine" multiplier="1.25" />
+            <Price storeidentifier="merchantarmory" multiplier="0.9" minavailable="1" sold="true" />
+        </Price>
+        <Fabricate suitablefabricators="fabricator" requiredtime="25" requiresrecipe="true">
+            <RequiredSkill identifier="weapons" level="40" />
+            <RequiredItem identifier="titaniumaluminiumalloy" />
+            <RequiredItem identifier="plastic" />
+        </Fabricate>
+        <Deconstruct>
+            <Item identifier="titanium" />
+            <Item identifier="aluminium" />
+            <Item identifier="carbon" />
+            <Item identifier="silicon" />
+        </Deconstruct>
+        <InventoryIcon texture="%ModDir%/Sprites/R8.png" sourcerect="0,1,74,53" origin="0.5,0.5" />
+        <Sprite texture="%ModDir%/Sprites/R8.png" sourcerect="0,1,74,53" depth="0.55" origin="0.5,0.5" />
+        <Body width="74" height="53" density="25" />
+        <StatusHUD overlaycolor="0,0,0,0" range="3000" thermalgoggles="false" showdeadcharacters="false" showtexts="false" />
+        <Holdable slots="Any,RightHand,LeftHand" controlpose="true" aimpos="70,5" handle1="-23,-10" msg="ItemMsgPickUpSelect" />
+        <RangedWeapon barrelpos="22,11.5" reload="0.4" spread="0" unskilledspread="2" combatPriority="75" drawhudwhenequipped="true" crosshairscale="0.2">
+            <Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,256,256,256" />
+            <CrosshairPointer texture="Content/Items/Weapons/Crosshairs.png" sourcerect="256,256,256,256" />
+            <Sound file="%ModDir%/Sounds/R8_fire.ogg" type="OnUse" range="3000" volume="0.2" />
+            <ParticleEmitter particle="muzzleflash" particleamount="1" velocitymin="0" velocitymax="0" />
+            <StatusEffect type="OnUse">
+                <Explosion range="150.0" force="0.7" shockwave="false" smoke="false" flames="false" sparks="false" underwaterbubble="false" camerashake="1.5" />
+            </StatusEffect>
+            <StatusEffect type="OnSecondaryUse" target="This" comparison="and" disabledeltatime="true">
+                <Conditional ReloadTimer="lte 0.2" />
+                <Conditional ReloadTimer="gt 0.1" />
+                <Sound file="%ModDir%/Sounds/R8_prepare.ogg" type="OnUse" volume="1" range="1000" loop="false" />
+            </StatusEffect>
+            <StatusEffect type="Always" target="This" targetitemcomponent="StatusHUD" thermalgoggles="false" interval="1" />
+            <StatusEffect type="Always" target="This" targetitemcomponent="LightComponent" ison="false" interval="1" />
+            <StatusEffect type="OnSecondaryUse" target="Contained" targetslot="1" Condition="-0.2" />
+            <StatusEffect type="OnSecondaryUse" target="This" targetitemcomponent="StatusHUD" drawhudwhenequipped="true" thermalgoggles="true">
+                <RequiredItem items="mobilebattery" type="Contained" />
+            </StatusEffect>
+            <StatusEffect type="OnSecondaryUse" target="This" targetitemcomponent="LightComponent" ison="true">
+                <RequiredItem items="mobilebattery" type="Contained" />
+            </StatusEffect>
+            <RequiredItems items="revolverammo" type="Contained" msg="ItemMsgAmmoRequired" />
+            <RequiredSkill identifier="weapons" level="35" />
+        </RangedWeapon>
+        <LightComponent LightColor="0,255,144,255" range="700" flicker="0.5" powerconsumption="0" IsOn="true" canbeselected="true">
+            <LightTexture texture="%ModDir%/Sprites/laser_light.png" origin="-0.001, 0.490" size="1.0,0.3" />
+        </LightComponent>
+        <ItemContainer capacity="1" maxstacksize="8" hideitems="true" containedstateindicatorstyle="bullet" containedstateindicatorslot="0">
+            <SlotIcon slotindex="0" texture="Content/UI/StatusMonitorUI.png" sourcerect="256,448,64,64" origin="0.5,0.5" />
+            <SlotIcon slotindex="1" texture="Content/UI/StatusMonitorUI.png" sourcerect="128,448,64,64" origin="0.5,0.5" />
+            <Containable items="revolverammo" />
+            <SubContainer capacity="1" maxstacksize="1">
+                <Containable items="mobilebattery">
+                    <StatusEffect type="OnContaining" targettype="This" Voltage="1.0" setvalue="true" />
+                </Containable>
+            </SubContainer>
+        </ItemContainer>
+        <aitarget sightrange="2000" soundrange="5000" fadeouttime="5" />
+        <Quality>
+            <QualityStat stattype="FirepowerMultiplier" value="0.1" />
+        </Quality>
+        <SkillRequirementHint identifier="weapons" level="35" />
+    </Item>
+    <Item identifier="tr_revolverroundap" variantof="revolverround" allowasextracargo="true" inventoryiconcolor="144,80,80,255" spritecolor="144,80,80">
+        <PreferredContainer primary="revolver" spawnprobability="0" />
+        <PreferredContainer primary="armcab" spawnprobability="0" />
+        <PreferredContainer secondary="wrecksecarmcab,abandonedsecarmcab" spawnprobability="*0.5" />
+        <PreferredContainer secondary="wreckarmcab,abandonedarmcab" spawnprobability="*0.5" />
+        <PreferredContainer secondary="secarmcab" spawnprobability="0" />
+        <Price baseprice="*1.5" minavailable="12">
+            <Price storeidentifier="merchantoutpost" multiplier="1.5" />
+            <Price storeidentifier="merchantcity" multiplier="1.25" />
+            <Price storeidentifier="merchantresearch" multiplier="1.25" />
+            <Price storeidentifier="merchantmilitary" multiplier="0.9" minavailable="36" />
+            <Price storeidentifier="merchantmine" multiplier="1.25" />
+            <Price storeidentifier="merchantarmory" multiplier="0.9" minavailable="36" />
+        </Price>
+        <Fabricate suitablefabricators="fabricator" requiredtime="20" requiresrecipe="true">
+            <RequiredSkill identifier="weapons" level="30" />
+            <RequiredItem identifier="magnesium" />
+            <RequiredItem identifier="titanium" />
+            <RequiredItem identifier="copper" />
+        </Fabricate>
+        <Sprite texture="Content/Items/Weapons/weapons_new.png" />
+        <Projectile maxtargetstohit="2">
+            <ParticleEmitter colormultiplier="255,80,80,175" />
+            <Attack structuredamage="*0.5" targetforce="*0.5" itemdamage="*1" severlimbsprobability="*0.5" penetration="0.5">
+                <Affliction identifier="gunshotwound" strength="*0.75" />
+                <Affliction identifier="bleeding" strength="*0.75" />
+                <Affliction identifier="stun" strength="*0.75" />
+            </Attack>
+        </Projectile>
+    </Item>
+</Items>

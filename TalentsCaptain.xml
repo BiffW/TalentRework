@@ -1,0 +1,225 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Talents>
+  <!--Overriding vanilla talents-->
+  <Override>
+    <Talent identifier="bigguns">
+      <Icon texture="Content/UI/TalentsIcons1.png" sheetindex="2,4" sheetelementsize="128,128" />
+      <!-- <Description tag="talentdescription.bigguns">
+        <Replace tag="[amount]" value="30" color="gui.green" />
+      </Description> -->
+      <Description tag="talentdescription.unlockrecipe">
+        <Replace tag="[itemname]" value="entityname.handcannon, entityname.handcannonround" color="gui.orange" />
+      </Description>
+      <AddedRecipe itemidentifier="handcannon" />
+      <AddedRecipe itemidentifier="handcannonround" />
+      <!-- <AbilityGroupEffect abilityeffecttype="OnAttack">
+        <Conditions>
+          <AbilityConditionCharacter targettypes="Enemy,Monster" />
+          <AbilityConditionAttackData tags="pistolammoitem" />
+        </Conditions>
+        <Abilities>
+          <CharacterAbilityModifyAttackData addeddamagemultiplier="0.3" />
+        </Abilities>
+      </AbilityGroupEffect> -->
+    </Talent>
+
+    <Talent identifier="gunsmith">
+      <Icon texture="Content/UI/TalentsIcons1.png" sheetindex="5,3" sheetelementsize="128,128" />
+      <!-- New description -->
+      <Description tag="talentdescription.crafthighqualityweapons">
+        <Replace tag="[qualitybonus]" value="1" color="gui.green" />
+      </Description>
+      <Description tag="talentdescription.unlockrecipe">
+        <Replace tag="[itemname]" value="entityname.revolver,entityname.revolverround" color="gui.orange" />
+      </Description>
+      <!-- New effect -->
+      <AbilityGroupEffect abilityeffecttype="None">
+        <Abilities>
+          <CharacterAbilityGivePermanentStat statidentifier="weapon" stattype="IncreaseFabricationQuality" value="1" />
+        </Abilities>
+      </AbilityGroupEffect>
+      <AddedRecipe itemidentifier="revolver" />
+      <AddedRecipe itemidentifier="revolverround" />
+    </Talent>
+
+    <Talent identifier="drunkensailor">
+      <Description tag="talentdescription.drunkensailor_new">
+        <Replace tag="[affliction]" value="afflictionname.deadeyecharge" color="gui.green" />
+      </Description>
+      <Description tag="talentdescription.drunkensailor">
+        <Replace tag="[stunresistance]" value="75" color="gui.green" />
+      </Description>
+      <Description tag="talentdescription.unlockrecipe">
+        <Replace tag="[itemname]" value="entityname.rum" color="gui.orange" />
+      </Description>
+      <Icon texture="Content/UI/TalentsIcons1.png" sheetindex="3,0" sheetelementsize="128,128" />
+      <AbilityGroupEffect abilityeffecttype="OnAddDamageAffliction">
+        <Abilities>
+          <CharacterAbilityModifyAffliction afflictionidentifiers="drunk" replacewith="drunknodebuffs" />
+        </Abilities>
+        <FallbackAbilities>
+          <CharacterAbilityModifyAffliction afflictionidentifiers="drunk" replacewith="drunknodebuffs" />
+        </FallbackAbilities>
+      </AbilityGroupEffect>
+      <AbilityGroupInterval>
+        <Conditions>
+          <AbilityConditionHasAffliction afflictionidentifier="drunknodebuffs" />
+        </Conditions>
+        <Abilities>
+          <CharacterAbilityModifyResistance resistanceid="stun" multiplier="0.25" />
+          <CharacterAbilityModifyResistance resistanceid="nausea" multiplier="0" />
+        </Abilities>
+      </AbilityGroupInterval>
+      <!-- New effect-->
+      <AbilityGroupInterval interval="1">
+        <Conditions>
+          <AbilityConditionHasAffliction afflictionidentifier="drunknodebuffs" />
+        </Conditions>
+        <Abilities>
+          <CharacterAbilityApplyStatusEffects>
+            <StatusEffects>
+              <StatusEffect type="OnAbility" target="This" multiplyafflictionsbymaxvitality="true" disabledeltatime="true">
+                <Affliction identifier="deadeyecharge" amount="1" />
+              </StatusEffect>
+            </StatusEffects>
+          </CharacterAbilityApplyStatusEffects>
+        </Abilities>
+      </AbilityGroupInterval>
+      <!-- New effect end-->
+      <AddedRecipe itemidentifier="rum" />
+    </Talent>
+  </Override>
+  <!-- New generic talent -->
+  <Talent identifier="tacticaloptions">
+    <Icon texture="%ModDir%/TalentsIcons.png" sheetindex="5,0" sheetelementsize="128,128" />
+    <Description tag="talentdescription.unlockrecipe">
+      <Replace tag="[itemname]" value="entityname.tr_tacticalrevolver, entityname.tr_revolverroundap" color="gui.orange" />
+    </Description>
+    <AddedRecipe itemidentifier="tr_tacticalrevolver" />
+    <AddedRecipe itemidentifier="tr_revolverroundap" />
+  </Talent>
+  <!--New gunslinger talents-->
+  <Talent identifier="deadeye">
+    <Description tag="talentdescription.deadeye">
+      <Replace tag="[affliction_a]" value="afflictionname.deadeyecharge" color="gui.green" />
+      <Replace tag="[affliction_b]" value="afflictionname.deadeyeready" color="gui.green" />
+      <Replace tag="[damage]" value="100" color="gui.green" />
+    </Description>
+    <Icon texture="%ModDir%/TalentsIcons.png" sheetindex="0,0" sheetelementsize="128,128" />
+    <!--Gain dead eye charge from hits with pistol ammo-->
+    <AbilityGroupEffect abilityeffecttype="OnAttack">
+      <Conditions>
+        <AbilityConditionHasAffliction afflictionidentifier="deadeyeready" invert="true" />
+        <AbilityConditionCharacter targettypes="Enemy" />
+        <AbilityConditionAttackData tags="pistolammoitem" />
+      </Conditions>
+      <Abilities>
+        <CharacterAbilityApplyStatusEffects>
+          <StatusEffects>
+            <StatusEffect type="OnAbility" target="This" multiplyafflictionsbymaxvitality="true" delay="0.05" stackable="false" disabledeltatime="true">
+              <Affliction identifier="deadeyecharge" strength="10" />
+            </StatusEffect>
+          </StatusEffects>
+        </CharacterAbilityApplyStatusEffects>
+      </Abilities>
+    </AbilityGroupEffect>
+    <!--Afflict 100% more damage with pistol ammo when dead eye is ready-->
+    <AbilityGroupEffect abilityeffecttype="OnAttack">
+      <Conditions>
+        <AbilityConditionHasAffliction afflictionidentifier="deadeyeready" />
+        <AbilityConditionCharacter targettypes="Enemy,Monster" />
+        <AbilityConditionAttackData tags="pistolammoitem" />
+      </Conditions>
+      <Abilities>
+        <CharacterAbilityModifyAttackData addeddamagemultiplier="1" />
+      </Abilities>
+    </AbilityGroupEffect>
+    <!--Reduce 10 dead eye when shoot with pistol-->
+    <AbilityGroupEffect abilityeffecttype="OnUseRangedWeapon">
+      <Conditions>
+        <AbilityConditionItem tags="pistolitem" />
+      </Conditions>
+      <Abilities>
+        <CharacterAbilityApplyStatusEffects>
+          <StatusEffects>
+            <!-- small delay so we don't remove the affliction before the attack is applied -->
+            <StatusEffect type="OnAbility" target="This" multiplyafflictionsbymaxvitality="true" delay="0.05" stackable="false" disabledeltatime="true">
+              <ReduceAffliction identifier="deadeyeready" strength="10" />
+            </StatusEffect>
+          </StatusEffects>
+        </CharacterAbilityApplyStatusEffects>
+      </Abilities>
+    </AbilityGroupEffect>
+  </Talent>
+
+  <Talent identifier="bigsmoke">
+    <Icon texture="Content/UI/TalentsIcons1.png" sheetindex="6,1" sheetelementsize="128,128"/>
+    <Description tag="talentdescription.bigsmoke">
+      <Replace tag="[affliction_a]" value="afflictionname.deadeyecharge" color="gui.green" />
+      <Replace tag="[affliction_b]" value="afflictionname.haste" color="gui.green" />
+    </Description>
+    <AbilityGroupEffect abilityeffecttype="OnUseRangedWeapon">
+      <Conditions>
+        <AbilityConditionItem tags="bigsmoke" />
+      </Conditions>
+      <Abilities>
+        <CharacterAbilityApplyStatusEffects>
+          <StatusEffects>
+            <StatusEffect type="OnAbility" target="Character">
+              <Affliction identifier="deadeyecharge" amount="6" />
+              <Affliction identifier="haste" amount="60" />
+            </StatusEffect>
+          </StatusEffects>
+        </CharacterAbilityApplyStatusEffects>
+      </Abilities>
+    </AbilityGroupEffect>
+  </Talent>
+
+  <Talent identifier="angeltrigger">
+    <Icon texture="%ModDir%/TalentsIcons.png" sheetindex="1,0" sheetelementsize="128,128" />
+    <Description tag="talentdescription.angeltrigger">
+      <Replace tag="[reduction]" value="90" color="gui.green" />
+      <Replace tag="[affliction]" value="afflictionname.deadeyeready" color="gui.green" />
+      <Replace tag="[second]" value="5" color="gui.green" />
+    </Description>
+    <AbilityGroupEffect abilityeffecttype="OnAttack">
+      <Conditions>
+        <AbilityConditionCharacter targettypes="Ally" />
+        <AbilityConditionAttackData tags="pistolammoitem" />
+      </Conditions>
+      <Abilities>
+        <CharacterAbilityModifyAttackData addeddamagemultiplier="-0.9" />
+      </Abilities>
+    </AbilityGroupEffect>
+    <AbilityGroupEffect abilityeffecttype="OnAttack">
+      <Conditions>
+        <AbilityConditionHasAffliction afflictionidentifier="deadeyeready" />
+        <AbilityConditionCharacter targettypes="Enemy" />
+        <AbilityConditionAttackData tags="handcannonammo" />
+      </Conditions>
+      <Abilities>
+        <CharacterAbilityGiveAffliction affliction="stun" strength="5" setvalue="true" />
+      </Abilities>
+    </AbilityGroupEffect>
+  </Talent>
+
+  <Talent identifier="deviltrigger">
+    <Icon texture="%ModDir%/TalentsIcons.png" sheetindex="2,0" sheetelementsize="128,128" />
+    <Description tag="talentdescription.deviltrigger">
+      <Replace tag="[affliction]" value="afflictionname.deadeyeready" color="gui.green" />
+    </Description>
+    <AbilityGroupEffect abilityeffecttype="OnAttack">
+      <Conditions>
+        <AbilityConditionHasAffliction afflictionidentifier="deadeyeready" />
+        <AbilityConditionCharacter targettypes="Enemy,Monster" />
+        <AbilityConditionAttackData tags="handcannonammo" />
+        <AbilityConditionCharacter>
+          <Conditional mass="lt 150" />
+        </AbilityConditionCharacter>
+      </Conditions>
+      <Abilities>
+        <CharacterAbilityModifyAttackData implode="true" />
+      </Abilities>
+    </AbilityGroupEffect>
+  </Talent>
+</Talents>
