@@ -3,19 +3,19 @@
     <Override>
         <!-- 狂战士天赋：按比例加buff -->
         <Talent identifier="berserker">
-            <Icon texture="Content/UI/TalentsIcons3.png" sheetindex="3,6" sheetelementsize="128,128"/>
+            <Icon texture="Content/UI/TalentsIcons3.png" sheetindex="3,6" sheetelementsize="128,128" />
             <Description tag="talentdescription.onhealthpercentageloss">
-                <Replace tag="[healthloss]" value="10" color="gui.green"/>
-                <Replace tag="[maxhealthloss]" value="50" color="gui.green"/>
+                <Replace tag="[healthloss]" value="10" color="gui.green" />
+                <Replace tag="[maxhealthloss]" value="50" color="gui.green" />
             </Description>
             <Description tag="talentdescription.additionalstattype">
-                <Replace tag="[amount]" value="10" color="gui.green"/>
-                <Replace tag="[stattype]" value="stattypenames.meleedamagebonus" color="gui.orange"/>
+                <Replace tag="[amount]" value="10" color="gui.green" />
+                <Replace tag="[stattype]" value="stattypenames.meleedamagebonus" color="gui.orange" />
             </Description>
             <AbilityGroupEffect abilityeffecttype="OnAttack">
                 <Conditions>
                     <AbilityConditionAttackData weapontype="melee" />
-                    <AbilityConditionAboveVitality invert="true" vitalitypercentage="0.9"/>
+                    <AbilityConditionAboveVitality invert="true" vitalitypercentage="0.9" />
                 </Conditions>
                 <Abilities>
                     <CharacterAbilityModifyAttackData addeddamagemultiplier="0.1" />
@@ -24,7 +24,7 @@
             <AbilityGroupEffect abilityeffecttype="OnAttack">
                 <Conditions>
                     <AbilityConditionAttackData weapontype="melee" />
-                    <AbilityConditionAboveVitality invert="true" vitalitypercentage="0.8"/>
+                    <AbilityConditionAboveVitality invert="true" vitalitypercentage="0.8" />
                 </Conditions>
                 <Abilities>
                     <CharacterAbilityModifyAttackData addeddamagemultiplier="0.1" />
@@ -33,7 +33,7 @@
             <AbilityGroupEffect abilityeffecttype="OnAttack">
                 <Conditions>
                     <AbilityConditionAttackData weapontype="melee" />
-                    <AbilityConditionAboveVitality invert="true" vitalitypercentage="0.7"/>
+                    <AbilityConditionAboveVitality invert="true" vitalitypercentage="0.7" />
                 </Conditions>
                 <Abilities>
                     <CharacterAbilityModifyAttackData addeddamagemultiplier="0.1" />
@@ -42,7 +42,7 @@
             <AbilityGroupEffect abilityeffecttype="OnAttack">
                 <Conditions>
                     <AbilityConditionAttackData weapontype="melee" />
-                    <AbilityConditionAboveVitality invert="true" vitalitypercentage="0.6"/>
+                    <AbilityConditionAboveVitality invert="true" vitalitypercentage="0.6" />
                 </Conditions>
                 <Abilities>
                     <CharacterAbilityModifyAttackData addeddamagemultiplier="0.1" />
@@ -51,7 +51,7 @@
             <AbilityGroupEffect abilityeffecttype="OnAttack">
                 <Conditions>
                     <AbilityConditionAttackData weapontype="melee" />
-                    <AbilityConditionAboveVitality invert="true" vitalitypercentage="0.5"/>
+                    <AbilityConditionAboveVitality invert="true" vitalitypercentage="0.5" />
                 </Conditions>
                 <Abilities>
                     <CharacterAbilityModifyAttackData addeddamagemultiplier="0.1" />
@@ -60,18 +60,19 @@
         </Talent>
         <!-- 有勇无谋：按比例加buff -->
         <Talent identifier="foolhardy">
-            <Icon texture="Content/UI/TalentsIcons3.png" sheetindex="4,6" sheetelementsize="128,128"/>
+            <Icon texture="Content/UI/TalentsIcons3.png" sheetindex="4,6" sheetelementsize="128,128" />
             <Description tag="talentdescription.onhealthpercentageloss">
-                <Replace tag="[healthloss]" value="10" color="gui.green"/>
-                <Replace tag="[maxhealthloss]" value="50" color="gui.green"/>
+                <Replace tag="[healthloss]" value="10" color="gui.green" />
+                <Replace tag="[maxhealthloss]" value="50" color="gui.green" />
             </Description>
             <Description tag="talentdescription.additionalstattype">
-                <Replace tag="[amount]" value="10" color="gui.green"/>
-                <Replace tag="[stattype]" value="stattypenames.physicalresistance" color="gui.orange"/>
+                <Replace tag="[amount]" value="10" color="gui.green" />
+                <Replace tag="[stattype]" value="stattypenames.physicalresistance" color="gui.orange" />
             </Description>
             <AbilityGroupEffect abilityeffecttype="OnAttacked">
                 <Conditions>
-                    <AbilityConditionAboveVitality invert="true" vitalitypercentage="0.9"/>
+                    <AbilityConditionAboveVitality vitalitypercentage="0.9" invert="true" />
+                    <AbilityConditionAboveVitality vitalitypercentage="0.8" />
                 </Conditions>
                 <Abilities>
                     <CharacterAbilityModifyAttackData addeddamagemultiplier="-0.1" />
@@ -79,34 +80,37 @@
             </AbilityGroupEffect>
             <AbilityGroupEffect abilityeffecttype="OnAttacked">
                 <Conditions>
-                    <AbilityConditionAboveVitality invert="true" vitalitypercentage="0.8"/>
+                    <AbilityConditionAboveVitality vitalitypercentage="0.8" invert="true" />
+                    <AbilityConditionAboveVitality vitalitypercentage="0.7" />
                 </Conditions>
                 <Abilities>
-                    <CharacterAbilityModifyAttackData addeddamagemultiplier="-0.1" />
+                    <CharacterAbilityModifyAttackData addeddamagemultiplier="-0.2" />
                 </Abilities>
             </AbilityGroupEffect>
             <AbilityGroupEffect abilityeffecttype="OnAttacked">
                 <Conditions>
-                    <AbilityConditionAboveVitality invert="true" vitalitypercentage="0.7"/>
+                    <AbilityConditionAboveVitality vitalitypercentage="0.7" invert="true" />
+                    <AbilityConditionAboveVitality vitalitypercentage="0.6" />
                 </Conditions>
                 <Abilities>
-                    <CharacterAbilityModifyAttackData addeddamagemultiplier="-0.1" />
+                    <CharacterAbilityModifyAttackData addeddamagemultiplier="-0.3" />
                 </Abilities>
             </AbilityGroupEffect>
             <AbilityGroupEffect abilityeffecttype="OnAttacked">
                 <Conditions>
-                    <AbilityConditionAboveVitality invert="true" vitalitypercentage="0.6"/>
+                    <AbilityConditionAboveVitality vitalitypercentage="0.6" invert="true" />
+                    <AbilityConditionAboveVitality vitalitypercentage="0.5" />
                 </Conditions>
                 <Abilities>
-                    <CharacterAbilityModifyAttackData addeddamagemultiplier="-0.1" />
+                    <CharacterAbilityModifyAttackData addeddamagemultiplier="-0.4" />
                 </Abilities>
             </AbilityGroupEffect>
             <AbilityGroupEffect abilityeffecttype="OnAttacked">
                 <Conditions>
-                    <AbilityConditionAboveVitality invert="true" vitalitypercentage="0.5"/>
+                    <AbilityConditionAboveVitality vitalitypercentage="0.5" invert="true" />
                 </Conditions>
                 <Abilities>
-                    <CharacterAbilityModifyAttackData addeddamagemultiplier="-0.1" />
+                    <CharacterAbilityModifyAttackData addeddamagemultiplier="-0.5" />
                 </Abilities>
             </AbilityGroupEffect>
         </Talent>

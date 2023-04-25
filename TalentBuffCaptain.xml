@@ -4,6 +4,8 @@
     <!--remove screen effects-->
     <Affliction identifier="drunknodebuffs" type="debuff" translationoverride="drunk" limbspecific="false" indicatorlimb="Head" maxstrength="100" affectmachines="false">
 
+      <Effect minstrength="0" maxstrength="20" strengthchange="-0.1" />
+
       <Effect minstrength="20" maxstrength="40" strengthchange="-0.1" minfacetint="255,0,0,0" maxfacetint="255,0,0,50">
         <!-- remove "normal" drunkenness -->
         <StatusEffect target="Character" setvalue="true">
