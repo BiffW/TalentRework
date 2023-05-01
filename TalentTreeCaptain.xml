@@ -12,7 +12,6 @@
       </TalentOptions>
       <TalentOptions requiredtalents="2" maxchosentalents="6">
         <TalentOption identifier="emergencymaneuvers"/>
-        <TalentOption identifier="sailorwithnoname"/>
         <TalentOption identifier="camaraderie"/>
         <TalentOption identifier="downwiththeship"/>
         <TalentOption identifier="gunsmith"/>
@@ -25,15 +24,14 @@
         <TalentOption identifier="deadeye"/>
       </TalentOptions>
       <TalentOptions>
-        <TalentOption identifier="bigsmoke"/>
+        <TalentOption identifier="sailorwithnoname"/>
         <TalentOption identifier="drunkensailor"/>
       </TalentOptions>
       <TalentOptions>
         <TalentOption identifier="bigguns"/>
       </TalentOptions>
       <TalentOptions>
-        <TalentOption identifier="angeltrigger"/>
-        <TalentOption identifier="deviltrigger"/>
+        <TalentOption identifier="goodandevil"/>
       </TalentOptions>
     </SubTree>
     <SubTree identifier="skipper" type="specialization" requires="captain_primary" blocks="gunslinger,politician">

@@ -5,17 +5,22 @@
   <afflictiondescription.deadeyecharge>该角色正聚精会神，寻找敌人的弱点。</afflictiondescription.deadeyecharge>
   <afflictionname.deadeyeready>死神之眼</afflictionname.deadeyeready>
   <afflictiondescription.deadeyeready>该角色已准备好拔枪发起致命打击。</afflictiondescription.deadeyeready>
-  <!-- 天赋 -->
+  <!-- 舰长天赋 -->
   <talentname.tacticaloptions>战术选项</talentname.tacticaloptions>
   <talentname.deadeye>死神之眼</talentname.deadeye>
-  <talentdescription.deadeye>每当使用‖color:gui.orange‖手枪弹药‖end‖命中敌方目标，获得[affliction_a]。\n完全充能[affliction_b]需要‖color:gui.yellow‖6‖end‖次命中。\n拥有[affliction_b]时，接下来的‖color:gui.yellow‖6‖end‖次手枪射击对敌方目标造成[damage]%额外伤害。</talentdescription.deadeye>
+  <talentdescription.deadeye>每当使用‖color:gui.orange‖手枪弹药‖end‖命中敌方目标，获得[affliction_a]。\n激活[affliction_b]需要‖color:gui.yellow‖6‖end‖次命中。\n激活[affliction_b]后，接下来的‖color:gui.yellow‖6‖end‖次手枪射击对敌方目标造成[damage]%额外伤害。</talentdescription.deadeye>
   <talentname.bigsmoke>大烟枪</talentname.bigsmoke>
-  <talentdescription.bigsmoke>抽烟时，快速获得[affliction_a]和[affliction_b]。</talentdescription.bigsmoke>
+  <talentdescription.bigsmoke>抽烟时，快速获得[affliction_a]，并加快移动速度和开火速率。</talentdescription.bigsmoke>
   <talentdescription.drunkensailor_new>醉酒时，缓慢获得[affliction]。</talentdescription.drunkensailor_new>
+  <talentname.goodandevil>善恶分明</talentname.goodandevil>
+  <talentdescription.goodandevil_0>使用‖color:gui.orange‖手枪弹药‖end‖对友方目标造成的伤害降低[reduction]%。</talentdescription.goodandevil_0>
+  <talentdescription.goodandevil_1>拥有[affliction]时，使用‖color:gui.orange‖手炮弹药‖end‖攻击小型怪物将使其内爆。</talentdescription.goodandevil_1>
+  <!-- 弃用的天赋 -->
   <talentname.angeltrigger>善良之枪</talentname.angeltrigger>
   <talentdescription.angeltrigger>使用‖color:gui.orange‖手枪弹药‖end‖对友方目标造成的伤害降低[reduction]%。\n拥有[affliction]时，使用‖color:gui.orange‖手炮弹药‖end‖对敌方目标造成[second]秒额外眩晕。</talentdescription.angeltrigger>
   <talentname.deviltrigger>恶魔扳机</talentname.deviltrigger>
   <talentdescription.deviltrigger>拥有[affliction]时，使用‖color:gui.orange‖手炮弹药‖end‖攻击小型怪物将使其内爆。</talentdescription.deviltrigger>
+  <!-- 机修天赋 -->
   <talentdescription.onhealthpercentageloss>你每失去[healthloss]%生命值，获得以下效果（失去[maxhealthloss]%时达到最大效果）：</talentdescription.onhealthpercentageloss>
   <!-- 物品 -->
   <entityname.tr_tacticalrevolver>战术左轮</entityname.tr_tacticalrevolver>

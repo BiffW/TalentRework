@@ -10,8 +10,12 @@
   <talentname.deadeye>Dead Eye</talentname.deadeye>
   <talentdescription.deadeye>Gain [affliction_a] when you hit an enemy with ‖color:gui.orange‖pistol ammo‖end‖.\nIt takes ‖color:gui.yellow‖6‖end‖ hits to fully charge [affliction_b].\nWhen you have [affliction_b], your next ‖color:gui.yellow‖6‖end‖ pistol shots will deal [damage]% more damage to enemies.</talentdescription.deadeye>
   <talentname.bigsmoke>Big Smoke</talentname.bigsmoke>
-  <talentdescription.bigsmoke>Quickly gain [affliction_a] and [affliction_b] while smoking.</talentdescription.bigsmoke>
+  <talentdescription.bigsmoke>Quickly gain [affliction_a] and boost your movement speed and firing rate.</talentdescription.bigsmoke>
   <talentdescription.drunkensailor_new>Slowly gain [affliction] while drunk.</talentdescription.drunkensailor_new>
+  <talentname.goodandevil>Good and Evil</talentname.goodandevil>
+  <talentdescription.goodandevil_0>Deal [reduction]% less damage to allies with ‖color:gui.orange‖pistol ammo‖end‖.</talentdescription.goodandevil_0>
+  <talentdescription.goodandevil_1>When you have [affliction], your attack with ‖color:gui.orange‖handcannon ammo‖end‖ will implode small creatures.</talentdescription.goodandevil_1>
+  <!-- deprecated talents -->
   <talentname.angeltrigger>Missing Shots</talentname.angeltrigger>
   <talentdescription.angeltrigger>Deal [reduction]% less damage to allies with ‖color:gui.orange‖pistol ammo‖end‖.\nWhen you have [affliction], your attack with ‖color:gui.orange‖handcannon ammo‖end‖ will stun enemies for [second] extra seconds.</talentdescription.angeltrigger>
   <talentname.deviltrigger>Devil Trigger</talentname.deviltrigger>

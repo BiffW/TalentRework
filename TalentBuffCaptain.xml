@@ -35,6 +35,7 @@
     <Effect minstrength="0" maxstrength="59" strengthchange="0" />
     <Effect minstrength="59" maxstrength="60" strengthchange="0">
       <StatusEffect target="Character" setvalue="true">
+        <Sound file="%ModDir%/Sounds/deadeye_ready.ogg" volume="5" range="1000" loop="false" />
         <ReduceAffliction identifier="deadeyecharge" strength="60" />
         <Affliction identifier="deadeyeready" strength="60" />
       </StatusEffect>
@@ -49,5 +50,13 @@
       </StatusEffect>
     </Effect>
     <Icon texture="%ModDir%/TalentsIcons.png" sheetindex="4,0" sheetelementsize="128,128" color="10,193,114,255" origin="0,0" />
+  </Affliction>
+
+  <Affliction identifier="haste_bigsmoke" translationoverride="haste" type="talentbuff" isbuff="true" limbspecific="false" maxstrength="60" treatmentthreshold="1000" iconcolors="33,75,78;126,211,224;126,211,224;227,247,249">
+    <Effect minstrength="0" maxstrength="60" strengthchange="-1" minspeedmultiplier="1.35" maxspeedmultiplier="1.35">
+      <StatValue stattype="RangedAttackSpeed" value="0.25" />
+      <StatValue stattype="SwimmingSpeed" value="0.3" />
+    </Effect>
+    <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="128,896,128,128" color="10,193,114,255" origin="0,0"/>
   </Affliction>
 </Afflictions>

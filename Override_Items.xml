@@ -13,7 +13,7 @@
                 <Price storeidentifier="merchantmine" />
             </Price>
             <!--add ranged weapon so it can trigger talent effect-->
-            <RangedWeapon reload="1" />
+            <RangedWeapon reload="0.1" />
             <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="511,957,64,64" origin="0.5,0.5" />
             <Sprite texture="Content/Items/Misc/Misc.png" sourcerect="105,73,50,30" depth="0.55" origin="0.5,0.5" />
             <Body width="58" height="20" density="15" />
@@ -40,7 +40,7 @@
             <PreferredContainer primary="crewcab" />
             <Price baseprice="130" sold="false" />
             <!--add ranged weapon so it can trigger talent effect-->
-            <RangedWeapon reload="1" />
+            <RangedWeapon reload="0.1" />
             <Fabricate suitablefabricators="fabricator" requiredtime="5" requiresrecipe="true">
                 <RequiredItem identifier="pipetobacco" />
             </Fabricate>
