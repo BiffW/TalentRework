@@ -35,9 +35,12 @@
     <Effect minstrength="0" maxstrength="59" strengthchange="0" />
     <Effect minstrength="59" maxstrength="60" strengthchange="0">
       <StatusEffect target="Character" setvalue="true">
-        <Sound file="%ModDir%/Sounds/deadeye_ready.ogg" volume="5" range="1000" loop="false" />
         <ReduceAffliction identifier="deadeyecharge" strength="60" />
         <Affliction identifier="deadeyeready" strength="60" />
+      </StatusEffect>
+      <StatusEffect target="Character">
+        <Conditional IsLocalPlayer="True"/>
+        <Sound file="%ModDir%/Sounds/deadeye_ready.ogg" volume="3" range="600" loop="false" />
       </StatusEffect>
     </Effect>
     <Icon texture="%ModDir%/TalentsIcons.png" sheetindex="3,0" sheetelementsize="128,128" color="10,193,114,255" origin="0,0" />
