@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Talents>
+  <!--Overriding vanilla talents-->
+  <Override>
+    <!-- 融合0污染 -->
+    <Talent identifier="geneticgenious">
+        <Icon texture="Content/UI/TalentsIcons1.png" sheetindex="5,6" sheetelementsize="128,128"/>
+        <Description tag="talentdescription.geneticmaterialtaintedprobabilityreductiononcombine">
+        <Replace tag="[amount]" value="100" color="gui.green"/>
+        </Description>
+        <Description tag="talentdescription.unlockrecipe">
+        <Replace tag="[itemname]" value="entityname.advancedgenesplicer" color="gui.orange"/>
+        </Description>
+        <AbilityGroupEffect abilityeffecttype="None">
+        <Abilities>
+            <CharacterAbilityGiveStat stattype="GeneticMaterialTaintedProbabilityReductionOnCombine" value="1"/>
+        </Abilities>
+        </AbilityGroupEffect>
+        <AddedRecipe itemidentifier="advancedgenesplicer"/>
+    </Talent>
+  </Override>
+</Talents>

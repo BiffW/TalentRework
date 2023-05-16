@@ -103,6 +103,34 @@
       <!-- New effect end-->
       <AddedRecipe itemidentifier="rum" />
     </Talent>
+    <!-- 勋章升8级 -->
+    <Talent identifier="figurehead">
+      <Icon texture="Content/UI/TalentsIcons1.png" sheetindex="4,4" sheetelementsize="128,128"/>
+      <Description tag="talentdescription.figurehead">
+        <Replace tag="[selfxpgain]" value="550" color="gui.green"/>
+        <Replace tag="[level]" value="8" color="gui.green"/>
+      </Description>
+      <Description tag="talentdescription.factiondiscount">
+        <Replace tag="[discount]" value="20" color="gui.green"/>
+      </Description>
+      <AbilityGroupEffect abilityeffecttype="OnAttack">
+        <Conditions>
+          <AbilityConditionAttackData itemidentifier="coalitionmedal"/>
+        </Conditions>
+        <Abilities>
+          <CharacterAbilityGiveExperience level="8"/>
+        </Abilities>
+      </AbilityGroupEffect>
+      <Migrations>
+        <UpdateStatIdentifier version="1.0.10.0" old="figurehead" new="all~figurehead" />
+      </Migrations>
+      <AbilityGroupEffect abilityeffecttype="None">
+        <Abilities>
+          <CharacterAbilityGivePermanentStat statidentifier="all~figurehead" stattype="StoreBuyMultiplierAffiliated" value="0.2" targetallies="true" setvalue="true" />
+          <CharacterAbilityGivePermanentStat statidentifier="all~figurehead" stattype="ShipyardBuyMultiplierAffiliated" value="0.2" targetallies="true" setvalue="true" />
+        </Abilities>
+      </AbilityGroupEffect>
+    </Talent>
   </Override>
   <!-- New generic talent -->
   <Talent identifier="tacticaloptions">
@@ -166,7 +194,6 @@
       </Abilities>
     </AbilityGroupEffect>
   </Talent>
-
 
   <Talent identifier="goodandevil">
     <Icon texture="%ModDir%/TalentsIcons.png" sheetindex="0,1" sheetelementsize="128,128" />
