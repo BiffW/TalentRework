@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <infotexts language="Simplified Chinese" nowhitespace="true" translatedname="中文(简体)">
-  <!-- 状态 -->
+  <!-- 舰长天赋效果 -->
   <afflictionname.deadeyecharge>死神之眼（充能）</afflictionname.deadeyecharge>
   <afflictiondescription.deadeyecharge>该角色正聚精会神，寻找敌人的弱点。</afflictiondescription.deadeyecharge>
   <afflictionname.deadeyeready>死神之眼</afflictionname.deadeyeready>
@@ -15,16 +15,24 @@
   <talentname.goodandevil>善恶分明</talentname.goodandevil>
   <talentdescription.goodandevil_0>使用‖color:gui.orange‖手枪弹药‖end‖对友方目标造成的伤害降低[reduction]%。</talentdescription.goodandevil_0>
   <talentdescription.goodandevil_1>拥有[affliction]时，使用‖color:gui.orange‖手炮弹药‖end‖攻击小型怪物将使其内爆。</talentdescription.goodandevil_1>
-  <!-- 弃用的天赋 -->
-  <talentname.angeltrigger>善良之枪</talentname.angeltrigger>
-  <talentdescription.angeltrigger>使用‖color:gui.orange‖手枪弹药‖end‖对友方目标造成的伤害降低[reduction]%。\n拥有[affliction]时，使用‖color:gui.orange‖手炮弹药‖end‖对敌方目标造成[second]秒额外眩晕。</talentdescription.angeltrigger>
-  <talentname.deviltrigger>恶魔扳机</talentname.deviltrigger>
-  <talentdescription.deviltrigger>拥有[affliction]时，使用‖color:gui.orange‖手炮弹药‖end‖攻击小型怪物将使其内爆。</talentdescription.deviltrigger>
-  <!-- 机修天赋 -->
+  <!-- 医生天赋效果 -->
+  <afflictionname.miracleworker_active>奇迹创造者</afflictionname.miracleworker_active>
+  <afflictiondescription.miracleworker_active>该角色如灯塔一般照耀着其他船员，使他们逃脱死亡的命运。</afflictiondescription.miracleworker_active>
+  <!-- 医生天赋 -->
+  <talentdescription.miracleworker.new.tr>只要你还有行动能力，附近[maxdistance]米内的其他船员除非主动放弃，否则不会因伤痛死亡。</talentdescription.miracleworker.new.tr>
+  <!-- 通用天赋描述 -->
   <talentdescription.onhealthpercentageloss>你每失去[healthloss]%生命值，获得以下效果（失去[maxhealthloss]%时达到最大效果）：</talentdescription.onhealthpercentageloss>
+  <talentdescription.crafthighqualityitems.team>所有船员制造的[itemtag]质量都提高[qualitybonus]。</talentdescription.crafthighqualityitems.team>
+  <!-- 通用物品类别描述 -->
+  <itemtag.weapons>武器</itemtag.weapons>
   <!-- 物品 -->
   <entityname.tr_tacticalrevolver>战术左轮</entityname.tr_tacticalrevolver>
   <entitydescription.tr_tacticalrevolver>.38口径。带有激光指示器和热成像瞄具。</entitydescription.tr_tacticalrevolver>
   <entityname.tr_revolverroundap>左轮穿甲弹</entityname.tr_revolverroundap>
   <entitydescription.tr_revolverroundap>.38口径。穿透力强。</entitydescription.tr_revolverroundap>
+  <!-- 弃用的天赋 -->
+  <talentname.angeltrigger>善良之枪</talentname.angeltrigger>
+  <talentdescription.angeltrigger>使用‖color:gui.orange‖手枪弹药‖end‖对友方目标造成的伤害降低[reduction]%。\n拥有[affliction]时，使用‖color:gui.orange‖手炮弹药‖end‖对敌方目标造成[second]秒额外眩晕。</talentdescription.angeltrigger>
+  <talentname.deviltrigger>恶魔扳机</talentname.deviltrigger>
+  <talentdescription.deviltrigger>拥有[affliction]时，使用‖color:gui.orange‖手炮弹药‖end‖攻击小型怪物将使其内爆。</talentdescription.deviltrigger>
 </infotexts>

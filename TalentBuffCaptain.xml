@@ -3,31 +3,26 @@
   <Override>
     <!--remove screen effects-->
     <Affliction identifier="drunknodebuffs" type="debuff" translationoverride="drunk" limbspecific="false" indicatorlimb="Head" maxstrength="100" affectmachines="false">
-
       <Effect minstrength="0" maxstrength="20" strengthchange="-0.1" />
-
       <Effect minstrength="20" maxstrength="40" strengthchange="-0.1" minfacetint="255,0,0,0" maxfacetint="255,0,0,50">
         <!-- remove "normal" drunkenness -->
         <StatusEffect target="Character" setvalue="true">
           <ReduceAffliction identifier="drunk" strength="100" />
         </StatusEffect>
       </Effect>
-
       <Effect minstrength="40" maxstrength="80" strengthchange="-0.2" dialogflag="DrunkMedium" minfacetint="255,0,0,50" maxfacetint="255,0,0,100">
         <!-- remove "normal" drunkenness -->
         <StatusEffect target="Character" setvalue="true">
           <ReduceAffliction identifier="drunk" strength="100" />
         </StatusEffect>
       </Effect>
-
       <Effect minstrength="80" maxstrength="100" strengthchange="-0.2" dialogflag="DrunkHigh" minfacetint="255,0,0,150" maxfacetint="255,0,0,150">
         <!-- remove "normal" drunkenness -->
         <StatusEffect target="Character" setvalue="true">
           <ReduceAffliction identifier="drunk" strength="100" />
         </StatusEffect>
       </Effect>
-
-      <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="384,640,128,128" color="170,194,147,255" origin="0,0"/>
+      <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="384,640,128,128" color="170,194,147,255" origin="0,0" />
     </Affliction>
   </Override>
   <!--New Afflictions-->
@@ -39,7 +34,7 @@
         <Affliction identifier="deadeyeready" strength="60" />
       </StatusEffect>
       <StatusEffect target="Character">
-        <Conditional IsLocalPlayer="True"/>
+        <Conditional IsLocalPlayer="True" />
         <Sound file="%ModDir%/Sounds/deadeye_ready.ogg" volume="3" range="600" loop="false" />
       </StatusEffect>
     </Effect>
@@ -60,6 +55,6 @@
       <StatValue stattype="RangedAttackSpeed" value="0.25" />
       <StatValue stattype="SwimmingSpeed" value="0.3" />
     </Effect>
-    <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="128,896,128,128" color="10,193,114,255" origin="0,0"/>
+    <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="128,896,128,128" color="10,193,114,255" origin="0,0" />
   </Affliction>
 </Afflictions>

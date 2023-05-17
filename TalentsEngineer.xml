@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Talents>
+    <Override>
+        <!-- team effect -->
+        <Talent identifier="weaponartisan">
+            <Icon texture="Content/UI/TalentsIcons2.png" sheetindex="0,3" sheetelementsize="128,128" />
+            <Description tag="talentdescription.crafthighqualityitems.team">
+                <Replace tag="[itemtag]" value="itemtag.weapons" color="gui.orange" />
+                <Replace tag="[qualitybonus]" value="1" color="gui.green" />
+            </Description>
+            <!-- Give once when unlocking the talent -->
+            <AbilityGroupEffect abilityeffecttype="None">
+                <Abilities>
+                    <CharacterAbilityGivePermanentStat statidentifier="weapon" stattype="IncreaseFabricationQuality" value="1" targetallies="true" setvalue="true" />
+                </Abilities>
+            </AbilityGroupEffect>
+            <!-- Give every 60 seconds for late comers -->
+            <AbilityGroupInterval interval="60">
+                <Abilities>
+                    <CharacterAbilityGivePermanentStat statidentifier="weapon" stattype="IncreaseFabricationQuality" value="1" targetallies="true" setvalue="true" />
+                </Abilities>
+            </AbilityGroupInterval>
+        </Talent>
+    </Override>
+</Talents>

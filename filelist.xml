@@ -1,13 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<contentpackage name="Talent Rework and Tweaks" modversion="1.0.0" corepackage="False" gameversion="1.0.13.2">
+<contentpackage name="Talent Rework and Tweaks" modversion="1.0.0" corepackage="False" gameversion="1.0.14.0">
   <Item file="%ModDir%/Override_Items.xml" />
   <Afflictions file="%ModDir%/TalentBuffCaptain.xml" />
-  <Afflictions file="%ModDir%/TalentBuffMedic.xml" />
+  <Afflictions file="%ModDir%/TalentBuffDoctor.xml" />
   <Talents file="%ModDir%/TalentsCaptain.xml" />
   <Talents file="%ModDir%/TalentsDoctor.xml" />
-  <Talents file="%ModDir%/TalentsSecurity.xml" />
+  <Talents file="%ModDir%/TalentsEngineer.xml" />
   <Talents file="%ModDir%/TalentsMechanic.xml" />
-  <TalentTrees file="%ModDir%/TalentTreeCaptain.xml" />
+  <Talents file="%ModDir%/TalentsSecurity.xml" />
+  <TalentTrees file="%ModDir%/TalentTrees.xml" />
   <Text file="%ModDir%/Texts/SimplifiedChinese.xml" />
   <Text file="%ModDir%/Texts/English.xml" />
 </contentpackage>
