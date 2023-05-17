@@ -1,11 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <infotexts language="English" nowhitespace="true" translatedname="English">
-  <!-- Afflictions -->
+  <!-- Captain talent buff -->
   <afflictionname.deadeyecharge>Dead Eye(Charge)</afflictionname.deadeyecharge>
   <afflictiondescription.deadeyecharge>The subject is focused, seeking for weakness of enemies.</afflictiondescription.deadeyecharge>
   <afflictionname.deadeyeready>Dead Eye</afflictionname.deadeyeready>
   <afflictiondescription.deadeyeready>The subject is prepared to do critical shots.</afflictiondescription.deadeyeready>
-  <!-- Talents -->
+  <!-- Captatin talents -->
   <talentname.tacticaloptions>Tactical Options</talentname.tacticaloptions>
   <talentname.deadeye>Dead Eye</talentname.deadeye>
   <talentdescription.deadeye>Gain [affliction_a] when you hit an enemy with ‖color:gui.orange‖pistol ammo‖end‖.\nIt takes ‖color:gui.yellow‖6‖end‖ hits to fully charge [affliction_b].\nWhen you have [affliction_b], your next ‖color:gui.yellow‖6‖end‖ pistol shots will deal [damage]% more damage to enemies.</talentdescription.deadeye>
@@ -15,15 +15,24 @@
   <talentname.goodandevil>Good and Evil</talentname.goodandevil>
   <talentdescription.goodandevil_0>Deal [reduction]% less damage to allies with ‖color:gui.orange‖pistol ammo‖end‖.</talentdescription.goodandevil_0>
   <talentdescription.goodandevil_1>When you have [affliction], your attack with ‖color:gui.orange‖handcannon ammo‖end‖ will implode small creatures.</talentdescription.goodandevil_1>
-  <!-- deprecated talents -->
-  <talentname.angeltrigger>Missing Shots</talentname.angeltrigger>
-  <talentdescription.angeltrigger>Deal [reduction]% less damage to allies with ‖color:gui.orange‖pistol ammo‖end‖.\nWhen you have [affliction], your attack with ‖color:gui.orange‖handcannon ammo‖end‖ will stun enemies for [second] extra seconds.</talentdescription.angeltrigger>
-  <talentname.deviltrigger>Devil Trigger</talentname.deviltrigger>
-  <talentdescription.deviltrigger>When you have [affliction], your attack with ‖color:gui.orange‖handcannon ammo‖end‖ will implode small creatures.</talentdescription.deviltrigger>
+  <!-- Doctor talent buff -->
+  <afflictionname.miracleworker_active>Miracle Worker</afflictionname.miracleworker_active>
+  <afflictiondescription.miracleworker_active>Your shine bright like a beacon to help your crewmates escape their fate of death.</afflictiondescription.miracleworker_active>
+  <!-- Doctor talents -->
+  <talentdescription.miracleworker.new.tr>As long as you're capacitated, crew members within [maxdistance]m range are unable to succumb to their injuries unless they give in.</talentdescription.miracleworker.new.tr>
+  <!-- Generic talent descriptions -->
   <talentdescription.onhealthpercentageloss>For each [healthloss]% vitality loss(up to [maxhealthloss]% loss), you gain:</talentdescription.onhealthpercentageloss>
+  <talentdescription.crafthighqualityitems.team>All crew members craft [itemtag] at [qualitybonus] higher quality.</talentdescription.crafthighqualityitems.team>
+  <!-- Generic item tag descriptions -->
+  <itemtag.weapons>weapons</itemtag.weapons>
   <!-- Items -->
   <entityname.tr_tacticalrevolver>Tactical Revolver</entityname.tr_tacticalrevolver>
   <entitydescription.tr_tacticalrevolver>.38 caliber. With laser pointer and thermal scope attached.</entitydescription.tr_tacticalrevolver>
   <entityname.tr_revolverroundap>Armor-Piercing Revolver Round</entityname.tr_revolverroundap>
   <entitydescription.tr_revolverroundap>.38 caliber. High-penetration.</entitydescription.tr_revolverroundap>
+  <!-- deprecated talents -->
+  <talentname.angeltrigger>Missing Shots</talentname.angeltrigger>
+  <talentdescription.angeltrigger>Deal [reduction]% less damage to allies with ‖color:gui.orange‖pistol ammo‖end‖.\nWhen you have [affliction], your attack with ‖color:gui.orange‖handcannon ammo‖end‖ will stun enemies for [second] extra seconds.</talentdescription.angeltrigger>
+  <talentname.deviltrigger>Devil Trigger</talentname.deviltrigger>
+  <talentdescription.deviltrigger>When you have [affliction], your attack with ‖color:gui.orange‖handcannon ammo‖end‖ will implode small creatures.</talentdescription.deviltrigger>
 </infotexts>

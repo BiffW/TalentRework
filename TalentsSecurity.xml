@@ -3,18 +3,37 @@
     <Override>
         <!-- 抓人天赋：提高奖励 -->
         <Talent identifier="bythebook">
-            <Icon texture="Content/UI/TalentsIcons1.png" sheetindex="1,3" sheetelementsize="128,128"/>
+            <Icon texture="Content/UI/TalentsIcons1.png" sheetindex="1,3" sheetelementsize="128,128" />
             <Description tag="talentdescription.bythebook">
-                <Replace tag="[moneyamount]" value="2500" color="gui.green"/>
-                <Replace tag="[experienceamount]" value="1000" color="gui.green"/>
-                <Replace tag="[moneyamountmax]" value="5000" color="gui.green"/>
-                <Replace tag="[experienceamountmax]" value="2000" color="gui.green"/>
+                <Replace tag="[moneyamount]" value="2500" color="gui.green" />
+                <Replace tag="[experienceamount]" value="1250" color="gui.green" />
+                <Replace tag="[moneyamountmax]" value="5000" color="gui.green" />
+                <Replace tag="[experienceamountmax]" value="2500" color="gui.green" />
             </Description>
             <AbilityGroupEffect abilityeffecttype="OnRoundEnd">
                 <Abilities>
-                    <CharacterAbilityByTheBook moneyamount="2500" experienceamount="1000" max="2" />
+                    <CharacterAbilityByTheBook moneyamount="2500" experienceamount="1250" max="2" />
                 </Abilities>
             </AbilityGroupEffect>
+        </Talent>
+        <!-- 枪匠：整合弹药专家的冲锋枪弹匣、霰弹配方 -->
+        <Talent identifier="weaponsmith">
+            <Icon texture="Content/UI/TalentsIcons3.png" sheetindex="2,2" sheetelementsize="128,128" />
+            <Description tag="talentdescription.crafthighqualityweapons">
+                <Replace tag="[qualitybonus]" value="1" color="gui.green" />
+            </Description>
+            <Description tag="talentdescription.unlockrecipe">
+                <Replace tag="[itemname]" value="entityname.smg,entityname.smgmagazine,entityname.shotgun,entityname.shotgunshell" color="gui.orange" />
+            </Description>
+            <AbilityGroupEffect abilityeffecttype="None">
+                <Abilities>
+                    <CharacterAbilityGivePermanentStat statidentifier="weapon" stattype="IncreaseFabricationQuality" value="1" />
+                </Abilities>
+            </AbilityGroupEffect>
+            <AddedRecipe itemidentifier="smg" />
+            <AddedRecipe itemidentifier="smgmagazine" />
+            <AddedRecipe itemidentifier="shotgun" />
+            <AddedRecipe itemidentifier="shotgunshell" />
         </Talent>
     </Override>
 </Talents>

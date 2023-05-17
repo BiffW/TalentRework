@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Talents>
-  <!--Overriding vanilla talents-->
   <Override>
+    <!-- fabricate quality bonus -->
     <Talent identifier="gunsmith">
       <Icon texture="Content/UI/TalentsIcons1.png" sheetindex="5,3" sheetelementsize="128,128" />
       <!-- New description -->
@@ -20,20 +20,20 @@
       <AddedRecipe itemidentifier="revolver" />
       <AddedRecipe itemidentifier="revolverround" />
     </Talent>
-
+    <!-- dead eye implement -->
     <Talent identifier="sailorwithnoname">
       <Description tag="talentdescription.bigsmoke">
         <Replace tag="[affliction_a]" value="afflictionname.deadeyecharge" color="gui.green" />
         <Replace tag="[affliction_b]" value="afflictionname.haste" color="gui.green" />
       </Description>
       <Description tag="talentdescription.skillbonus">
-        <Replace tag="[amount]" value="20" color="gui.green"/>
-        <Replace tag="[skillname]" value="skillname.medical" color="gui.orange"/>
+        <Replace tag="[amount]" value="20" color="gui.green" />
+        <Replace tag="[skillname]" value="skillname.medical" color="gui.orange" />
       </Description>
       <Description tag="talentdescription.unlockrecipe">
-        <Replace tag="[itemname]" value="entityname.cigar" color="gui.orange"/>
+        <Replace tag="[itemname]" value="entityname.cigar" color="gui.orange" />
       </Description>
-      <Icon texture="Content/UI/TalentsIcons1.png" sheetindex="6,1" sheetelementsize="128,128"/>
+      <Icon texture="Content/UI/TalentsIcons1.png" sheetindex="6,1" sheetelementsize="128,128" />
       <AbilityGroupEffect abilityeffecttype="OnUseRangedWeapon">
         <Conditions>
           <AbilityConditionItem tags="bigsmoke" />
@@ -51,12 +51,12 @@
       </AbilityGroupEffect>
       <AbilityGroupEffect abilityeffecttype="None">
         <Abilities>
-          <CharacterAbilityGiveStat stattype="MedicalSkillBonus" value="20"/>
+          <CharacterAbilityGiveStat stattype="MedicalSkillBonus" value="20" />
         </Abilities>
       </AbilityGroupEffect>
-      <AddedRecipe itemidentifier="cigar"/>
+      <AddedRecipe itemidentifier="cigar" />
     </Talent>
-
+    <!-- dead eye implement -->
     <Talent identifier="drunkensailor">
       <Description tag="talentdescription.drunkensailor_new">
         <Replace tag="[affliction]" value="afflictionname.deadeyecharge" color="gui.green" />
@@ -103,7 +103,36 @@
       <!-- New effect end-->
       <AddedRecipe itemidentifier="rum" />
     </Talent>
+    <!-- give experience to reach level 8 instead of 5 -->
+    <Talent identifier="figurehead">
+      <Icon texture="Content/UI/TalentsIcons1.png" sheetindex="4,4" sheetelementsize="128,128" />
+      <Description tag="talentdescription.figurehead">
+        <Replace tag="[selfxpgain]" value="550" color="gui.green" />
+        <Replace tag="[level]" value="8" color="gui.green" />
+      </Description>
+      <Description tag="talentdescription.factiondiscount">
+        <Replace tag="[discount]" value="20" color="gui.green" />
+      </Description>
+      <AbilityGroupEffect abilityeffecttype="OnAttack">
+        <Conditions>
+          <AbilityConditionAttackData itemidentifier="coalitionmedal" />
+        </Conditions>
+        <Abilities>
+          <CharacterAbilityGiveExperience level="8" />
+        </Abilities>
+      </AbilityGroupEffect>
+      <Migrations>
+        <UpdateStatIdentifier version="1.0.10.0" old="figurehead" new="all~figurehead" />
+      </Migrations>
+      <AbilityGroupEffect abilityeffecttype="None">
+        <Abilities>
+          <CharacterAbilityGivePermanentStat statidentifier="all~figurehead" stattype="StoreBuyMultiplierAffiliated" value="0.2" targetallies="true" setvalue="true" />
+          <CharacterAbilityGivePermanentStat statidentifier="all~figurehead" stattype="ShipyardBuyMultiplierAffiliated" value="0.2" targetallies="true" setvalue="true" />
+        </Abilities>
+      </AbilityGroupEffect>
+    </Talent>
   </Override>
+
   <!-- New generic talent -->
   <Talent identifier="tacticaloptions">
     <Icon texture="%ModDir%/TalentsIcons.png" sheetindex="5,0" sheetelementsize="128,128" />
@@ -113,6 +142,7 @@
     <AddedRecipe itemidentifier="tr_tacticalrevolver" />
     <AddedRecipe itemidentifier="tr_revolverroundap" />
   </Talent>
+
   <!--New gunslinger talents-->
   <Talent identifier="deadeye">
     <Description tag="talentdescription.deadeye">
@@ -166,8 +196,6 @@
       </Abilities>
     </AbilityGroupEffect>
   </Talent>
-
-
   <Talent identifier="goodandevil">
     <Icon texture="%ModDir%/TalentsIcons.png" sheetindex="0,1" sheetelementsize="128,128" />
     <Description tag="talentdescription.goodandevil_0">
@@ -199,9 +227,10 @@
       </Abilities>
     </AbilityGroupEffect>
   </Talent>
+
   <!-- Deprecated -->
   <Talent identifier="bigsmoke">
-    <Icon texture="Content/UI/TalentsIcons1.png" sheetindex="6,1" sheetelementsize="128,128"/>
+    <Icon texture="Content/UI/TalentsIcons1.png" sheetindex="6,1" sheetelementsize="128,128" />
     <Description tag="talentdescription.bigsmoke">
       <Replace tag="[affliction_a]" value="afflictionname.deadeyecharge" color="gui.green" />
       <Replace tag="[affliction_b]" value="afflictionname.haste" color="gui.green" />
@@ -222,7 +251,6 @@
       </Abilities>
     </AbilityGroupEffect>
   </Talent>
-
   <Talent identifier="angeltrigger">
     <Icon texture="%ModDir%/TalentsIcons.png" sheetindex="1,0" sheetelementsize="128,128" />
     <Description tag="talentdescription.angeltrigger">
@@ -250,7 +278,6 @@
       </Abilities>
     </AbilityGroupEffect>
   </Talent>
-
   <Talent identifier="deviltrigger">
     <Icon texture="%ModDir%/TalentsIcons.png" sheetindex="2,0" sheetelementsize="128,128" />
     <Description tag="talentdescription.deviltrigger">

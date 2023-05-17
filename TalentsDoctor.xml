@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Talents>
+  <Override>
+    <!-- 0% taint probability -->
+    <Talent identifier="geneticgenious">
+      <Icon texture="Content/UI/TalentsIcons1.png" sheetindex="5,6" sheetelementsize="128,128" />
+      <Description tag="talentdescription.geneticmaterialtaintedprobabilityreductiononcombine">
+        <Replace tag="[amount]" value="100" color="gui.green" />
+      </Description>
+      <Description tag="talentdescription.unlockrecipe">
+        <Replace tag="[itemname]" value="entityname.advancedgenesplicer" color="gui.orange" />
+      </Description>
+      <AbilityGroupEffect abilityeffecttype="None">
+        <Abilities>
+          <CharacterAbilityGiveStat stattype="GeneticMaterialTaintedProbabilityReductionOnCombine" value="1" />
+        </Abilities>
+      </AbilityGroupEffect>
+      <AddedRecipe itemidentifier="advancedgenesplicer" />
+    </Talent>
+    <!-- no resistance to miracle worker, but only trigger when capacitated -->
+    <Talent identifier="miracleworker">
+      <Icon texture="Content/UI/TalentsIcons3.png" sheetindex="7,2" sheetelementsize="128,128" />
+      <Description tag="talentdescription.miracleworker.new.tr">
+        <Replace tag="[maxdistance]" value="12" color="gui.green" />
+      </Description>
+      <!-- a makeshift way to check capacitated -->
+      <AbilityGroupInterval interval="0.9">
+        <Abilities>
+          <CharacterAbilityApplyStatusEffects>
+            <StatusEffects>
+              <StatusEffect type="OnAbility" target="This" multiplyafflictionsbymaxvitality="true" disabledeltatime="true">
+                <Conditional IsIncapacitated="eq false" />
+                <Affliction identifier="miracleworker_active" amount="1.0"/>
+              </StatusEffect>
+            </StatusEffects>
+          </CharacterAbilityApplyStatusEffects>
+        </Abilities>
+      </AbilityGroupInterval>
+      <!-- only trigger when capacitated -->
+      <AbilityGroupInterval interval="0.9">
+        <Conditions>
+          <AbilityConditionHasAffliction afflictionIdentifier="miracleworker_active" />
+        </Conditions>
+        <Abilities>
+          <CharacterAbilityApplyStatusEffectsToAllies maxdistance="1200" allowself="false">
+            <StatusEffects>
+              <StatusEffect type="OnAbility" target="Character" disabledeltatime="true">
+                <Affliction identifier="miracleworker" amount="1.0" />
+              </StatusEffect>
+            </StatusEffects>
+          </CharacterAbilityApplyStatusEffectsToAllies>
+        </Abilities>
+      </AbilityGroupInterval>
+    </Talent>
+  </Override>
+</Talents>

@@ -63,10 +63,10 @@
                 </StatusEffect>
             </Holdable>
         </Item>
-        <!-- 压力稳定剂:增加持续时间，降低造价 -->
+        <!-- 压力稳定剂:降低造价 -->
         <Item name="" identifier="pressurestabilizer" category="Medical" maxstacksize="8" Tags="smallitem,chem,medical,syringe" allowasextracargo="true" description="" useinhealthinterface="true" scale="0.5" impactsoundtag="impact_metal_light">
             <PreferredContainer primary="medcab"/>
-            <Price baseprice="200" sold="false">
+            <Price baseprice="100" sold="false">
                 <Price storeidentifier="merchantoutpost" />
                 <Price storeidentifier="merchantcity" multiplier="0.9" />
                 <Price storeidentifier="merchantresearch" multiplier="0.9" />
@@ -89,10 +89,10 @@
                 <StatusEffect type="OnSuccess" target="This" Condition="-100.0" setvalue="true"/>
                 <StatusEffect type="OnFailure" target="This" Condition="-100.0" setvalue="true"/>
                 <StatusEffect tags="medical" type="OnSuccess" target="UseTarget" duration="10.0">
-                    <Affliction identifier="pressurestabilized" amount="1000" />
+                    <Affliction identifier="pressurestabilized" amount="100" />
                 </StatusEffect>
                 <StatusEffect tags="medical" type="OnFailure" target="UseTarget" duration="10.0">
-                    <Affliction identifier="pressurestabilized" amount="500" />
+                    <Affliction identifier="pressurestabilized" amount="50" />
                 </StatusEffect>
                 <StatusEffect type="OnSuccess" target="UseTarget">
                     <Conditional entitytype="eq Character"/>
