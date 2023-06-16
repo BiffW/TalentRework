@@ -4,19 +4,19 @@
     <SubTree identifier="captain_primary" nameidentifier="talenttree.primary" type="primary">
       <TalentOptions requiredtalents="2" maxchosentalents="6">
         <TalentOption identifier="bountyhunter" />
+        <TalentOption identifier="gunsmith" />
         <TalentOption identifier="logisticsexpert" />
         <TalentOption identifier="prodigy" />
         <TalentOption identifier="inspirationalleader" />
         <TalentOption identifier="veteran" />
-        <TalentOption identifier="travelingtradesman" />
       </TalentOptions>
       <TalentOptions requiredtalents="2" maxchosentalents="6">
         <TalentOption identifier="emergencymaneuvers" />
         <TalentOption identifier="camaraderie" />
         <TalentOption identifier="downwiththeship" />
-        <TalentOption identifier="gunsmith" />
         <TalentOption identifier="steadytune" />
         <TalentOption identifier="tacticaloptions" />
+        <TalentOption identifier="travelingtradesman" />
       </TalentOptions>
     </SubTree>
     <SubTree identifier="gunslinger" type="specialization" requires="captain_primary" blocks="skipper,politician">
@@ -69,19 +69,19 @@
 
   <TalentTree jobidentifier="securityofficer">
     <SubTree identifier="security_primary" nameidentifier="talenttree.primary" type="primary">
-      <TalentOptions requiredtalents="2" maxchosentalents="6">
+      <TalentOptions requiredtalents="2" maxchosentalents="5">
         <TalentOption identifier="protectandserve" />
         <TalentOption identifier="warstories" />
         <TalentOption identifier="firstaidtraining" />
         <TalentOption identifier="physicalconditioning" />
-        <TalentOption identifier="swole" />
-        <TalentOption identifier="buff" />
-      </TalentOptions>
-      <TalentOptions requiredtalents="2" maxchosentalents="4">
         <TalentOption identifier="weaponsmith" />
+      </TalentOptions>
+      <TalentOptions requiredtalents="2" maxchosentalents="5">
         <TalentOption identifier="bythebook" />
+        <TalentOption identifier="buff" />
         <TalentOption identifier="dontpushit" />
         <TalentOption identifier="bootcamp" />
+        <TalentOption identifier="swole" />
       </TalentOptions>
     </SubTree>
     <SubTree identifier="frogman" type="specialization" requires="security_primary" blocks="enforcer,gunner">
